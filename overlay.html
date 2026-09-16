@@ -72,20 +72,20 @@ body{font-family:var(--cond);color:var(--ink);-webkit-font-smoothing:antialiased
   text-shadow:0 0 16px rgba(102,212,255,.55),0 2px 3px rgba(0,0,0,.8)}
 
 /* ============ TEAM TABLE ============ */
-.tbl{width:470px;margin-top:0;border:3px solid #05080e;
-  background:#070c15;box-shadow:0 10px 30px rgba(0,0,0,.7);overflow:hidden}
+.tbl{width:470px;margin-top:0;border:2px solid #08a9d5;border-radius:5px;
+  background:#07111c;box-shadow:0 8px 22px rgba(0,0,0,.62),0 0 8px rgba(8,169,213,.28);overflow:hidden}
 
 .thead{display:grid;grid-template-columns:1fr 90px;height:40px;align-items:stretch;
-  background:linear-gradient(180deg,#0f1c2c,#0a1220);position:relative}
+  background:linear-gradient(180deg,#10283b,#07131f);position:relative}
 .thead .lbl{border:0;margin:0;padding:0;color:#fff;
   display:flex;align-items:center;justify-content:center;font-family:var(--cond);
   font-size:23px;font-weight:600;letter-spacing:.08em;text-shadow:0 2px 3px rgba(0,0,0,.6);
   pointer-events:none;z-index:2}
 .thead .lbl.team{justify-content:center;padding-right:0;
-  background:linear-gradient(180deg,#152536,#0c1522)}
+  background:linear-gradient(180deg,#10273a,#06111d)}
 .thead .lbl.win{
-  background:linear-gradient(180deg,#4ec8f4,#1f96d0 52%,#0f6eaa)}
-.thead .lbl.win{box-shadow:inset -1px 0 0 rgba(255,255,255,.22)}
+  background:linear-gradient(180deg,#36c4ed,#069dcc 52%,#0876a5)}
+.thead .lbl.win{box-shadow:inset 1px 0 0 rgba(255,255,255,.32)}
 .thead .lbl:hover{filter:brightness(1.08)}
 .thead .lbl.active{box-shadow:inset 0 -3px 0 #fff;color:#fff}
 .thead .lbl:focus{outline:none}
@@ -98,13 +98,7 @@ body{font-family:var(--cond);color:var(--ink);-webkit-font-smoothing:antialiased
 .clock-btn.on{background:rgba(255,255,255,.18);border-color:#fff}
 
 .row{display:grid;grid-template-columns:1fr 90px;align-items:stretch;height:52px;
-  border-bottom:1px solid rgba(224,190,76,.42);position:relative;overflow:hidden;
-  animation:rowIn .42s cubic-bezier(.2,.75,.25,1) both}
-.row:nth-child(2){animation-delay:.05s}.row:nth-child(3){animation-delay:.1s}
-.row:nth-child(4){animation-delay:.15s}.row:nth-child(5){animation-delay:.2s}
-.row:nth-child(6){animation-delay:.25s}.row:nth-child(7){animation-delay:.3s}
-.row:nth-child(8){animation-delay:.35s}.row:nth-child(9){animation-delay:.4s}
-.row:nth-child(10){animation-delay:.45s}.row:nth-child(11){animation-delay:.5s}
+  border-bottom:1px solid rgba(20,126,161,.68);position:relative;overflow:hidden}
 .row::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.09) 48%,transparent 70%);
   transform:translateX(-120%);animation:rowSheen 4.8s linear infinite}
@@ -120,12 +114,20 @@ body{font-family:var(--cond);color:var(--ink);-webkit-font-smoothing:antialiased
 @keyframes cloudWave{0%{transform:translate3d(-8%,2%,0) scale(1.05);background-position:0% 52%,35% 42%,100% 58%}
   50%{transform:translate3d(6%,-4%,0) scale(1.18);background-position:48% 42%,82% 62%,12% 38%}
   100%{transform:translate3d(16%,5%,0) scale(1.1);background-position:100% 58%,8% 40%,68% 55%}}
+.booyah-pop{position:absolute;left:-34%;top:50%;z-index:3;transform:translateY(-50%) skewX(-12deg);
+  padding:4px 28px 5px 18px;color:#171003;font:700 24px/1 var(--cond);letter-spacing:.16em;
+  background:linear-gradient(90deg,transparent 0%,#ffe9a6 12%,#e3b23c 72%,transparent 100%);
+  text-shadow:0 1px 0 rgba(255,255,255,.45);white-space:nowrap;pointer-events:none;
+  animation:booyahSweep 1.5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes booyahSweep{0%{left:-34%;opacity:0;filter:brightness(1)}
+  12%{opacity:1}65%{left:42%;opacity:1;filter:brightness(1.25)}
+  100%{left:112%;opacity:0;filter:brightness(1)}}
 @keyframes rowIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @keyframes rowSheen{0%{transform:translateX(-120%)}45%,100%{transform:translateX(120%)}}
 .row:last-child{border-bottom:0}
 .row .cell{display:flex;align-items:center;justify-content:center;
   font-family:var(--cond);font-weight:700;font-size:30px;font-variant-numeric:tabular-nums;
-  text-shadow:0 2px 3px rgba(0,0,0,.7);border-left:2px solid var(--rule);position:relative;z-index:1}
+  text-shadow:0 2px 3px rgba(0,0,0,.7);border-left:2px solid #0875a4;position:relative;z-index:1}
 .row .cell.win{gap:6px}
 .cup{font-size:25px;line-height:1;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))}
 
@@ -143,7 +145,7 @@ body{font-family:var(--cond);color:var(--ink);-webkit-font-smoothing:antialiased
   linear-gradient(282deg,rgba(43,144,232,.22) 0%,rgba(43,144,232,.03) 32%),
   linear-gradient(180deg,rgba(26,43,62,.78) 0%,rgba(14,24,38,.72) 58%,rgba(10,19,32,.72) 100%)}
 
-.tm{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 6px;min-width:0}
+.tm{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 6px;min-width:0}
 .logo{width:52px;height:52px;flex:0 0 52px;object-fit:contain;
   background:rgba(255,255,255,.03);position:absolute;left:6px}
 .logo-ph{display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;
@@ -243,6 +245,7 @@ function fmtClock(sec){ sec=Math.max(0,Math.floor(sec));
 
 let cfg={}, live={}, timer={running:false,base:0,startedAt:0}, offset=0, failed=false;
 const teams={}, logos={}, wins={}, teamListeners={}, customTeams={};
+let previousBooyahs={}, previousBooyahPulse=null, hasRendered=false;
 let sortBy="win", showHeader=true;
 
 db.ref(".info/serverTimeOffset").on("value", s => offset = s.val() || 0);
@@ -364,8 +367,12 @@ function render(){
   });
 
   rowsEl.innerHTML="";
+  const pulseNew=hasRendered && live.booyahPulse != null && live.booyahPulse !== previousBooyahPulse;
   rows.forEach((r,i)=>{
     const div=document.createElement("div");
+    const booyahCount=Number((live.booyahCounts||{})[r.id])||0;
+    const booyahNew=(previousBooyahs[r.id] !== undefined && booyahCount > previousBooyahs[r.id]) ||
+      (pulseNew && live.booyah === r.id && booyahCount > 0);
     div.className = "row" + (i===0 && r.win ? " lead" : "");
 
     const tm=document.createElement("div"); tm.className="tm";
@@ -381,8 +388,12 @@ function render(){
       ? "<span>"+r.win+"</span><span class='cup'>🏆</span>"
       : "<span>"+r.win+"</span>";
 
+    if(booyahNew){ const pop=document.createElement("div"); pop.className="booyah-pop"; pop.textContent="BOOYAH!"; div.append(pop); }
     div.append(tm,win); rowsEl.append(div);
+    previousBooyahs[r.id]=booyahCount;
   });
+  if(live.booyahPulse != null) previousBooyahPulse=live.booyahPulse;
+  hasRendered=true;
 
   tblEl.classList.remove("hide");
   setStatus(null);
