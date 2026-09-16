@@ -728,7 +728,7 @@ async function updateSlotStat(id,key,delta){
 async function resetSlot(id){const all=Object.assign({},live.slotStats||{});all[id]={kills:0,alive:4};await db.ref(P.live).update({slotStats:all});}
 async function updateBooyah(id,delta){
   const all=Object.assign({},live.booyahCounts||{}), next=Math.max(0,(Number(all[id])||0)+delta); all[id]=next;
-  await db.ref(P.live).update({booyah:next>0?id:(live.booyah===id?null:live.booyah),booyahCounts:all});
+  await db.ref(P.live).update({booyah:next>0?id:(live.booyah===id?null:live.booyah),booyahCounts:all,booyahPulse:Date.now()});
 }
 let slotEditId=null,slotEditIndex=-1;
 function openSlotEditor(id,number){
